@@ -76,9 +76,12 @@ export default function SignUp() {
       password: userData.password
     }
     try {
-      const res = await dispatch(signUp(user));
+      const res = dispatch(signUp(user));
       const { username, _id } = res;
-      return history.push(`/user/${username}/${_id}`);
+      setTimeout(() => {
+        history.push(`/user/${username}/${_id}`);
+      }, 500)
+      return;
     } catch (error) {return null;}
   }
 

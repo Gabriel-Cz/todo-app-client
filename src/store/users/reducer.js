@@ -12,14 +12,17 @@ const usersReducer = (state = initialState, action) => {
         case types.SIGN_UP:
             return {
                 ...state,
-                userToken: action.payload.token,
                 userData: action.payload
             }
         case types.LOGIN:
             return {
                 ...state,
-                userToken: action.payload.token,
                 userData: action.payload
+            }
+        case types.SET_TOKEN:
+            return {
+                ...state,
+                userToken: action.payload
             }
         case types.CLOSE_SESSION:
             return {
